@@ -8,12 +8,9 @@ export const handle: Handle = async ({event, resolve}) => {
         supabaseKey: PUBLIC_SUPABASE_ANON_KEY,
         event,
     })
-
-
     /*
         takes unencoded session data from the local storage medium. Not good for Server code
-
-        Use auth.getUser instead which makes a request to the Auth server
+        Use auth.getUser instead which makes a request to the Auth server to fetch trusted data
     */
     event.locals.getSession = async () => {
         const {
